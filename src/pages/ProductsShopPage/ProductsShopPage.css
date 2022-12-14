@@ -1,0 +1,32 @@
+.breadCrumb {
+    width: 100%;
+    padding: 15rem 0 5rem 0 ;
+    background: #f3f3f3;
+    margin-bottom: 3rem;
+}
+.ant-layout {
+    background: var(--white);
+}
+@media screen and (max-width:480px) {
+    .breadCrumb {
+        width: 100%;
+        margin: 1rem 0 2rem;
+        padding:10rem 0 4rem 0;
+        background: #f3f3f3;
+    }
+    .leftSide {
+        width: 100%;
+        overflow: hidden;
+
+    }
+    .leftSide input {
+        height: 3rem;
+    }
+    .leftSide img {
+        display: none;
+    }
+    .categories {
+        width: 100%;
+    }
+    
+}
