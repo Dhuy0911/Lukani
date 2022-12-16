@@ -44,34 +44,34 @@ const Products = (props) => {
 
 
     return <>
-        <div className="card featured-products__product">
-            <div className="featured-product__product-thumb">
+    <div className="card featured-products__product">
+                <div className="featured-product__product-thumb">
 
-                <img src={product.image} alt="" />
-                <div className="quickview-section">
-                    <ul>
-                        <li><p onClick={handleAddToCart} style={{ cursor: 'pointer' }} className="cart-productBtn" ><i className="fa-sharp fa-solid fa-bag-shopping"></i></p>
-                        </li>
-                        <li><p onClick={handleToDetail} style={{cursor:'pointer'}} className="quickview" href="#"><i className="fa-solid fa-eye"></i></p></li>
-                        <li><p className="heart" ><i className="fa-regular fa-heart"></i></p></li>
-                    </ul>
+                    <img src={product.image} alt="" />
+                    <div className="quickview-section">
+                        <ul>
+                            <li><p onClick={handleAddToCart} style={{ cursor: 'pointer' }} className="cart-productBtn" ><i className="fa-sharp fa-solid fa-bag-shopping"></i></p>
+                            </li>
+                            <li><p onClick={handleToDetail} style={{ cursor: 'pointer' }} className="quickview" href="#"><i className="fa-solid fa-eye"></i></p></li>
+                            <li><p className="heart" ><i className="fa-regular fa-heart"></i></p></li>
+                        </ul>
+                    </div>
+
                 </div>
 
-            </div>
+                <div className="card-body featured-products__product-des">
+                    <ul className="icons d-flex">
+                        <li><i className="fa-sharp fa-solid fa-star"></i></li>
+                        <li><i className="fa-sharp fa-solid fa-star"></i></li>
+                        <li><i className="fa-sharp fa-solid fa-star"></i></li>
+                        <li><i className="fa-sharp fa-solid fa-star"></i></li>
+                        <li><i className="fa-sharp fa-solid fa-star"></i></li>
+                    </ul>
+                    <p className='name'>{product.name}</p>
+                    <p className="price">${product.price}</p>
 
-            <div className="card-body featured-products__product-des">
-                <ul className="icons d-flex">
-                    <li><i className="fa-sharp fa-solid fa-star"></i></li>
-                    <li><i className="fa-sharp fa-solid fa-star"></i></li>
-                    <li><i className="fa-sharp fa-solid fa-star"></i></li>
-                    <li><i className="fa-sharp fa-solid fa-star"></i></li>
-                    <li><i className="fa-sharp fa-solid fa-star"></i></li>
-                </ul>
-                <p className='name'>{product.name}</p>
-                <p className="price">${product.price}</p>
-
-            </div>
-        </div>
+                </div>
+            </div> 
 
     </>
 }

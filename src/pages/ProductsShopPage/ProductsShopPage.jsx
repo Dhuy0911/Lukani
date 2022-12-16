@@ -7,29 +7,45 @@ import appAxios from '../../service/axios';
 import { useEffect } from 'react';
 import ProductsList from './ProductsList/ProductsList';
 import Footer from '../../components/Footer/Footer';
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import Loading from '../../components/Loading/Loading';
 
 
 
 const ProductsShopPage = () => {
     const { Content } = Layout;
+    const [categories, setCategories] = useState([]);
     const [page, setPage] = useState(1)
     const [search, setSearch] = useState('');
+    const limit = 12;
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false)
     const [products, setProducts] = useState([]);
-    const handleFetchProducts = async (limit, page) => {
+    const { category } = useParams();
+    const handleFetchProducts = async (limit, page, category) => {
         setLoading(true);
 
         try {
-            const productsData = await appAxios.get('/products', {
+            
+            if (category) {
+                const productsData = await appAxios.get(`/products?category=${category}`)
+                return productsData.data;
+            }
+            const productsData = await appAxios.get(`/products`, {
                 params: {
                     limit, page, search
                 }
             })
 
-            setProducts(productsData.data)
+
+            const allProducts = productsData.data
+            allProducts.map(product => {
+                return product.categories === category
+            })
+
+
+
+            setProducts(allProducts)
         } catch (e) {
             notification.error({
                 title: 'error',
@@ -40,11 +56,11 @@ const ProductsShopPage = () => {
         setLoading(false);
     }
     useEffect(() => {
-        const callApiTimeOut = setTimeout(handleFetchProducts(12, page), 500);// debounce
+        const callApiTimeOut = setTimeout(() => handleFetchProducts(limit,page), 500);// debounce
         return () => {
             clearTimeout(callApiTimeOut)
         }
-    }, [page, search])
+    }, [page, search, category])
 
     const handlechangePagination = (page) => {
         setPage(page);
@@ -84,14 +100,14 @@ const ProductsShopPage = () => {
                             <img src={process.env.PUBLIC_URL + "/assets/images/newsletter_large.jpg"} alt=""
                                 style={{
                                     width: "100%",
-                                    marginTop:"5rem"
+                                    marginTop: "5rem"
 
                                 }} />
                         </div>
                     </div>
                     <div className="col-lg-9 col-md-6 col-12">
                         {loading ? <Loading /> : <div className="products-list d-flex flex-wrap justify-content-between">
-                            <ProductsList handlechangePagination={handlechangePagination} products={products} loading={loading} />
+                            <ProductsList handlechangePagination={handlechangePagination} products={products} loading={loading} search={search} />
                         </div>}
                         <Pagination onChange={handlechangePagination} style={{ textAlign: 'center', marginTop: '2rem' }} defaultCurrent={1} total={50} />
                     </div>

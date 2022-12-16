@@ -13,6 +13,7 @@ import CartPage from './pages/CartPage/CartPage';
 import DetailProduct from './pages/DetailProduct/DetailProduct';
 
 import HomePage from './pages/HomePage/HomePage';
+import Categiores from './pages/ProductsShopPage/Categories/Categories';
 import ProductsShopPage from './pages/ProductsShopPage/ProductsShopPage';
 
 
