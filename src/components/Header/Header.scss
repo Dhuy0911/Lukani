@@ -3,13 +3,13 @@
     width: 100%;
     padding: 3rem 1rem;
     z-index: 909;
-    overflow: hidden;
+
 }
 
 .header .header__navigation-wrapper {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
 }
 
@@ -20,21 +20,60 @@
 .header .header__navigation-wrapper--links {
     display: flex;
     margin-bottom: unset;
-    margin-left: 1rem;
+    
+
+    .shop-menu {
+        position: relative;
+
+       
+
+        .second-menu {
+            background-color: var(--white);
+            border-radius: 1.6rem;
+            width: 12rem;
+            height: auto;
+            position: absolute;
+            left: 0;
+            padding: 1.8rem;
+            font-size: 1.6rem;
+            line-height: 3rem;
+            margin-top: 1rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: .4s;
+            li {
+                &:hover {
+                    color: var(--green);
+                    cursor: pointer;
+                }
+            }
+        }
+        &:hover {
+            .second-menu {
+                opacity: 1;
+                visibility: visible;
+                width: 12rem;
+            }
+        }
+    }
+
 }
+
+
 
 .header .header__navigation-wrapper--links a {
     font-size: 2rem;
     margin: 1.2rem;
     color: var(--black);
     font-weight: 500;
-
 }
 
 .header .header__navigation-wrapper--actions .icons {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: unset;
+
 
 }
 
@@ -190,6 +229,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    cursor: pointer;
 }
 
 .cart-total {
@@ -208,6 +248,7 @@
     cursor: pointer;
 
 }
+
 .view-cartBtn {
     width: 20rem;
     height: 4rem;
@@ -218,6 +259,7 @@
     margin-right: 2rem;
     margin-bottom: 2rem;
 }
+
 .view-cartBtn:hover {
     background: var(--black);
     transition: .4s;
@@ -335,6 +377,7 @@
         margin: 1rem;
 
     }
+
     .header__navigation-mobile--links {
         line-height: 2.5;
         font-weight: bold;

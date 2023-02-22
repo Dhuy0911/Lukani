@@ -1,4 +1,4 @@
-import '../Header/Header.css'
+import '../Header/Header.scss'
 
 const ProductInCart = (props) => {
     const { handleRemoveProduct,updateQuantity,cartItem } = props

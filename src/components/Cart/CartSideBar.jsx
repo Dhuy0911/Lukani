@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import '../Header/Header.css';
+import '../Header/Header.scss';
 import ListProductInCart from './ListProductInCart';
 import ProductInCart from './ListProductInCart';
 import { Button, Drawer } from 'antd';

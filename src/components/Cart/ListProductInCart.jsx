@@ -1,7 +1,7 @@
 import { notification } from 'antd';
 import { useContext } from 'react'
 import CartContext from '../../context/CartContext'
-import '../Header/Header.css'
+import '../Header/Header.scss'
 import ProductInCart from './ProductInCart';
 
 const ListProductInCart = () => {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import '../Header/Header.css';
+import '../Header/Header.scss';
 import { Avatar, Badge, Drawer, } from 'antd';
 import { useContext } from 'react';
 import CartContext from '../../context/CartContext';
@@ -57,15 +57,28 @@ const Header = (props) => {
                             <li><NavLink to="/" end>
                                 Home
                             </NavLink></li>
-                            <li><NavLink to="/shop" end>
+                            <li className='shop-menu' ><NavLink to="/shop" end>
                                 Shop
-                            </NavLink></li>
+                            </NavLink>
+                            <ul className='second-menu'>
+                                <h4>Categories</h4>
+                                <li>Plant Families</li>
+                                <li>Outdoor</li>
+                                <li>Plant Pot</li>
+                                <li>Other</li>
+                            </ul>
+                            </li>
                             <li><NavLink to="/cart" end>
                                 Cart
                             </NavLink></li>
-                            <li><NavLink to="/pages" end>
+                            <li className='shop-menu'><NavLink to="/pages" end>
                                 Pages
-                            </NavLink></li>
+                            </NavLink>
+                            <ul className="second-menu">
+                                <li>Error 404</li>
+                                <li>About Us</li>
+                            </ul>
+                            </li>
 
 
                         </ul>

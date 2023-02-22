@@ -13,7 +13,7 @@ import Loading from '../Loading/Loading';
 const FeaturedProductsList = (props) => {
     const { loading, products } = props
     const [size, setSize] = useState('large');
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
 
 
 
@@ -31,7 +31,7 @@ const FeaturedProductsList = (props) => {
                     <div className="col-12">
 
 
-                        {loading ? <Loading/> : <div className="product-list d-flex justify-content-center flex-wrap">
+                        {loading ? <Loading /> : <div className="product-list d-flex justify-content-center flex-wrap">
                             {
                                 products.map((product) => {
                                     return <FeaturedProducts product={product} key={product.id} />
@@ -42,11 +42,14 @@ const FeaturedProductsList = (props) => {
                         </div>}
                     </div>
                     <div className='text-center my-3'>
-                        <button className='viewMoreBtn'
-                            onClick={() => navigate('/shop')}
-                            shape="round" >
 
-                            View more
+                        <button class="learn-more"
+                            onClick={() => navigate('/shop')}
+                        >
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text" >View More</span>
                         </button>
                     </div>
 
