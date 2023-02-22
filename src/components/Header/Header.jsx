@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import '../Header/Header.scss';
+import './Header.scss';
 import { Avatar, Badge, Drawer, } from 'antd';
 import { useContext } from 'react';
 import CartContext from '../../context/CartContext';
